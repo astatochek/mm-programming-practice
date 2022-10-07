@@ -1,0 +1,21 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\title{Двунаправленная очередь}
+\author{Коротченок Остап Андреевич}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Структура}
+Элементом двунаправленной очереди будет структура узел, в котором хранится переменная data, и переменная ссылка на следующий узел.
+
+\chapter{Push/pop}
+Н.У.О push\_front добавит узел в начало, сделает предыдущий first своим next, а сам станет новым first.
+Н. У. О. pop\_front удалит первый элемент и вернет data удаленного. Node, записанный как next у удаленного, становится новым first.
+\chapter{Сложность}
+Добавление и удаление элементов константное, но их можно добавить(удалить) только в начало или конец. Обращение по индексам отсутствует. Поиск линейный, так как надо с первого элемента идти по next-ам и проверять.
+\end{document}
