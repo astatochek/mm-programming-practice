@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>15.4</title>
+    </head>
+    <body onload="show()">
+        <div class="col">
+            <p>Введите функцию</p>
+            <input type="text" onblur="show()" id="func" value="Math.cos(x) * x">
+            <p>Введите левую границу</p>
+            <input type="text" onblur="show()" id="left" value="-2">
+            <p>Введите правую границу</p>
+            <input type="text" onblur="show()" id="right" value="2">
+            <p>Введите точность</p>
+            <input type="text" onblur="show()" id="eps" value="0.001">
+            <p>Результаты</p>
+            <div class="out" id="output"></div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

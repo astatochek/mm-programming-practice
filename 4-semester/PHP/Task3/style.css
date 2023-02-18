@@ -1,0 +1,23 @@
+body
+{
+    display: flex;
+    padding: auto;
+    margin: auto;
+    justify-content: center;
+}
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    border-radius: 10px;
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    width: 500px;
+    height: 100px;
+    align-items: center;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    text-align: center;
+}

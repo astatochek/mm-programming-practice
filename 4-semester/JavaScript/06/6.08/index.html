@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>6.8</title>
+    </head>
+    <body>
+        <div class="title">
+            Успеваемость студенов
+        </div>
+        <div class="window">
+            <div class="col">
+                <form id="form">
+                    <select name="list" size="1" onchange="changeStudent()">
+                        <option value="0">Матвеев Сергей</option>
+                        <option value="1">Семенов Алексей</option>
+                        <option value="2">Кириллов Борис</option>
+                        <option value="3">Сергеев Матвей</option>
+                        <option value="4">Алексеев Семен</option>
+                        <option value="5">Борисов Кирилл</option>
+                    </select>
+                </form>
+            </div>
+            <div class="col">
+                <div class="cell">Математический анализ</div>
+                <div class="cell">Алгебра и теория чисел</div>
+                <div class="cell">Геометрия и топология</div>
+                <div class="cell">Теория управления</div>
+            </div>
+            <div class="col">
+                <div class="cell"><form onchange="changeMark()">
+                    <input type="radio" name="field" value="1">1
+                    <input type="radio" name="field" value="2">2
+                    <input type="radio" name="field" value="3">3
+                    <input type="radio" name="field" value="4">4
+                    <input type="radio" name="field" value="5">5
+                </form></div>
+                <div class="cell"><form onchange="changeMark()">
+                    <input type="radio" name="field" value="1">1
+                    <input type="radio" name="field" value="2">2
+                    <input type="radio" name="field" value="3">3
+                    <input type="radio" name="field" value="4">4
+                    <input type="radio" name="field" value="5">5
+                </form></div>
+                <div class="cell"><form onchange="changeMark()">
+                    <input type="radio" name="field" value="1">1
+                    <input type="radio" name="field" value="2">2
+                    <input type="radio" name="field" value="3">3
+                    <input type="radio" name="field" value="4">4
+                    <input type="radio" name="field" value="5">5
+                </form></div>
+                <div class="cell"><form onchange="changeMark()">
+                    <input type="radio" name="field" value="1">1
+                    <input type="radio" name="field" value="2">2
+                    <input type="radio" name="field" value="3">3
+                    <input type="radio" name="field" value="4">4
+                    <input type="radio" name="field" value="5">5
+                </form></div>
+            </div> 
+        </div>
+        <div class="out" id="output">1. Матвеев Сергей: 0</div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

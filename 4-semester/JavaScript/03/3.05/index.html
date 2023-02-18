@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3.5</title>
+    </head>
+    <body>
+        <div class="window">
+            <div class="inpt">
+                <form name="f">
+                    <p><h3>Введите число часов по дисциплине</h3></p>
+                    <div>
+                        <p>Математический анализ</p>
+                        <input type="text" name="MA" onblur="processAction(f)" value="36">
+                    </div>
+                    <div>
+                        <p>Алгебра и теория чисел</p>
+                        <input type="text" name="AT"  onblur="processAction(f)" value="36">
+                    </div>
+                    <div>
+                        <p>Топология</p>
+                    <input type="text" name="T"  onblur="processAction(f)" value="36">
+                    </div>
+                    <div>
+                        <p>Теория управления</p>
+                        <input type="text" name="TY"  onblur="processAction(f)" value="36">
+                    </div>
+                </form>
+            </div>
+            <div class="graph">
+                <div class="col">
+                    <div class="wrapper">
+                        <div class="bar" onmouseover="showStat(1, f, true)" onmouseout="showStat(1, f, false)">
+                            <div class="stat" id="1"></div></div>
+                    </div>
+                    Математический анализ
+                </div>
+                <div class="col">
+                    <div class="wrapper">
+                        <div class="bar" onmouseover="showStat(2, f, true)" onmouseout="showStat(2, f, false)">
+                            <div class="stat" id="2"></div></div>
+                    </div>
+                    Алгебра и теория чисел
+                </div>
+                <div class="col">
+                    <div class="wrapper">
+                        <div class="bar" onmouseover="showStat(3, f, true)" onmouseout="showStat(3, f, false)">
+                            <div class="stat" id="3"></div>
+                        </div>
+                    </div>
+                    Топология
+                </div>
+                <div class="col">
+                    <div class="wrapper">
+                        <div class="bar" onmouseover="showStat(4, f, true)" onmouseout="showStat(4, f, false)">
+                            <div class="stat" id="4"></div>
+                        </div>
+                    </div>
+                    Теория управления
+                </div>
+            </div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

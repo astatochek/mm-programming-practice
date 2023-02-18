@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>15.2</title>
+    </head>
+    <body onload="show()">
+        <div class="col">
+            <p>Введите функцию, описывающую область</p>
+            <input type="text" onblur="show()" id="func" value="Math.cos(x) <= 0">
+            <p>Введите X и Y</p>
+            <input type="text" onblur="show()" id="xy" value="-1.5 2.6">
+            <div class="out" id="output"></div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

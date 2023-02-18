@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>17.1</title>
+    </head>
+    <body onload="show()">
+        <div class="col">
+            <p>Нахождение формул вида a ? b ? c = d</p>
+            <p>Введите a</p>
+            <input type="text" onblur="show()" id="a" value="54">
+            <p>Введите b</p>
+            <input type="text" onblur="show()" id="b" value="6">
+            <p>Введите c</p>
+            <input type="text" onblur="show()" id="c" value="9">
+            <p>Введите d</p>
+            <input type="text" onblur="show()" id="d" value="0">
+            <p>Полученные формулы</p>
+            <div class="out" id="output"></div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>
+

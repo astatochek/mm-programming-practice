@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>4.9</title>
+    </head>
+    <body>
+        <div class="window">
+            <div class="col">
+                <div class="title">Значение параметра выравнивания align-items</div>
+                <div class="text">
+                    <form name="f">
+                        <input type="radio" onfocus="processAction(`baseline`)" name="field">baseline<br>
+                        <input type="radio" onfocus="processAction(`center`)" name="field">center<br>
+                        <input type="radio" onfocus="processAction(`flex-end`)" name="field">flex-end<br>
+                        <input type="radio" onfocus="processAction(`flex-start`)" name="field">flex-start<br>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class="title">Результат при выбранном значении параметра</div>
+                <div class="text" id="output">
+                    <div>
+                        <img src="eren.png" id="pic" width="100px" height="100px">
+                    </div>
+                    <div style="padding: 5%;">
+                        Eren is Shingeki no Kyojin's protagonist. His childhood friend, 
+                        Mikasa, notes on numerous occasions that he acts on impulse without 
+                        thinking things through, and she often pulls/carries/throws him when 
+                        he starts fighting with others to protect him from himself. Along with 
+                        Mikasa, he tends to spend his free time with their mutual friend, Armin.
+                    </div>
+                </div>
+            </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>6.10</title>
+    </head>
+    <body>
+        <div class="window">
+            <div class="inpt">
+                <form name="f">
+                    <p><h3>Введите параметры таблицы</h3></p>
+                    <div>
+                        <p>Border</p>
+                        <input type="text" name="B" onblur="processAction(f, 1)" value="0">
+                    </div>
+                    <div>
+                        <p>Cell Spacing</p>
+                        <input type="text" name="P"  onblur="processAction(f, 2)" value="0">
+                    </div>
+                    <div>
+                        <p>Sell Margin</p>
+                    <input type="text" name="M"  onblur="processAction(f, 3)" value="0">
+                    </div>
+                    <div>
+                        <p>Table Color</p>
+                        <select id="select" onchange="selectColor()">
+                            <option>Black</option>
+                            <option>Gray</option>
+                            <option>White</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+            <div class="table"  id="window">
+                <div class="row">
+                    <div class="cell" style="background-color: rgb(190, 208, 241);"><img src="ayaka.png"></div>
+                    <div class="cell" style="background-color: rgb(241, 227, 190);"><img src="aether.png"></div>
+                </div>
+                <div class="row">
+                    <div class="cell" style="background-color: rgb(190, 208, 241);"><img src="ayato.png"></div>
+                    <div class="cell" style="background-color: rgb(241, 227, 190);"><img src="lumine.png"></div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

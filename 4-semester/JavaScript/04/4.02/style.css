@@ -1,0 +1,64 @@
+body
+{
+    margin: 0 auto;
+    padding: 0px;
+}
+.window
+{
+    margin: 2%;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.inpt
+{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Segoe UI';
+}
+.out
+{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Segoe UI';
+}
+.wrapper
+{
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+}
+.col
+{
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: left;
+}
+input
+{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  
+    border: 2px solid rgb(85, 108, 238);
+    transition: 0.1s all linear;
+    outline: none;
+    position: relative;
+    top: 4px;
+}
+  
+input:checked
+{
+    border: 6px solid rgb(85, 108, 238);
+}

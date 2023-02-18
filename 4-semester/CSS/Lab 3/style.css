@@ -1,0 +1,30 @@
+body
+{
+    margin: 0 auto;
+}
+.formula
+{
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 70px;
+    padding: 60px;
+}
+.text
+{
+    text-align: left;
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+#watermark
+{
+    position: fixed;
+    z-index: 1;
+    font-family: Impact;
+    font-size: 200px;
+    opacity: 0.1;
+    color: rgb(47, 0, 255);
+    top: 30%;
+    left: 20%;
+}

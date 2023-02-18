@@ -1,0 +1,68 @@
+body
+{
+    display: flex;
+    padding: auto;
+    margin: auto;
+    justify-content: center;
+}
+.window
+{
+    border: 1px black solid;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px;
+    width: 450px;
+    align-items: center;
+    flex-direction: column;
+}
+.table
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.text
+{
+    font-family: Verdana;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+}
+.cell
+{
+    display: flex;
+    font-size: 15px;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(239, 239, 239);
+    font-family: 'Segoe UI';
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 2px;
+    padding: 2px;
+}
+.wrapper
+{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+}
+.output
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: left;
+    margin: 10px;
+    padding: 10px;
+}
+input
+{
+    font-family: Verdana;
+    font-size: 15px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>4.5</title>
+    </head>
+    <body>
+        <div class="window">
+            <div class="inpt">
+                <form name="form 1" id="form">
+                    <h3>Выберите:</h3>
+                    <input type="radio" onblur="processAction()" name="field" value="Вариант 1" id="dot 1">Вариант 1 <br>
+                    <input type="radio" onblur="processAction()" name="field" value="Вариант 2" id="dot 2">Вариант 2 <br>
+                    <input type="radio" onblur="processAction()" name="field" value="Вариант 3" id="dot 3">Вариант 3 <br>
+                </form>
+            </div>
+            <div class="col">
+                <div class="out"><h3>Вы выбрали:</h3></div>
+                <div class="wrapper">
+                    <div class="out" id="output">Вы выбрали: None</div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="manageBlur()">
+    <div class="wrapper">
+        <div class="col">
+            <button class="button" onclick="changeBG()">Изменить цвет фона блока справа</button>
+            <img id='naruto' src="pictures/mari.png">
+        </div>
+        <div class="col" id="col">
+            <button class="button" onclick="next()" id="second">Изменяет цвет квадрата</button>
+            <div class="block" id="block"></div>
+        </div>
+        <div class="col">
+            <button class="button mutable" onclick="manageBlur()">При наведении меняет цвет и размер</button>
+            <img id='target' src="pictures/mari.png" class="movable">
+        </div>  
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

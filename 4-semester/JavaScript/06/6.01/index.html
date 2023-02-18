@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>6.1</title>
+    </head>
+    <body>
+        <div class="window">
+            <div class="title">
+                Выберите вариант
+            </div>
+            <div class="input">
+                <form id="form">
+                    <select name="list" id="select" size="1">
+                        <option value="0">Первый вариант</option>
+                        <option value="1">Вариант 2</option>
+                        <option value="2">Вариант Три</option>
+                    </select>
+                    <input type="button" value="Отправить" onclick="process()">
+                </form>
+            </div>
+            <div class="output" id="output">
+                Вы ничего не выбрали :(
+            </div>
+            
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

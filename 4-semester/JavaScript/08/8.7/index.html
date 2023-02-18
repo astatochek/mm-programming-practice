@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>8.7</title>
+    </head>
+    <body>
+        <div class="col">
+            <p>Введите начальное приближение</p>
+            <form>
+                <input type="text" onblur="calc()" id="t" value="0.5">
+            </form>
+            <p>Введите точность</p>
+            <form>
+                <input type="text" onblur="calc()" id="eps" value="0.00001">
+            </form>
+            <p>Результат итерационного решения уравнения x = sin(x^2 + 1):</p>
+            <div class="out" id="output"></div>
+            <p>Точный ответ: 0.94720341339051476242</p>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

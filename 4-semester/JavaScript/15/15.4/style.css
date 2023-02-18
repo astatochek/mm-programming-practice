@@ -1,0 +1,41 @@
+body
+{
+    display: flex;
+    margin: 2%;
+    padding: 0px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.col
+{
+    border: 1px black solid;
+    padding: 10px;
+    width: 400px;
+    display: flex;
+    font-family: Verdana;
+    justify-content: center;
+    text-align: center;
+    font-size: 15;
+    margin: 5px;
+    flex-direction: column;
+}
+.out
+{
+    display: flex;
+    font-family: Verdana;
+    justify-content: center;
+    text-align: left;
+    padding-left: 5%;
+    font-size: 15;
+    margin: 5px;
+    flex-direction: column;
+}
+input
+{
+    padding: 5px;
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    align-items: center;
+}

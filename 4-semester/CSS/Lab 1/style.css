@@ -1,0 +1,66 @@
+body
+{
+    margin: 0 auto;
+    padding: 0px;
+}
+.window
+{
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+.asuka
+{
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(196, 68, 68);
+}
+.ayanami
+{
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(65, 108, 201, 0.918);
+}
+.asuka img
+{
+    width: 400px;
+    margin: 60px;
+    margin-bottom: -4px;
+}
+.ayanami img
+{
+    width: 300px;
+    margin: 60px;
+    margin-bottom: -4px;
+}
+.description
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text
+{
+    border: 2px solid white;
+    padding: 20px;
+    margin: 60px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Segoe UI';
+}
+.hr-line
+{
+	margin: 20px 0;
+	padding: 0;
+	height: 0;
+	border: none;
+	border-top: 2px solid white;
+}

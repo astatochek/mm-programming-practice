@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Individual Task 3</title>
+    </head>
+    <body onload="getToday()">
+        <div class="window">
+            <div class="table">
+                <div class="text">Число: <input type="text" value="13" id="Date" size="3" onchange="start()"></div>
+                <div class="text">
+                    Месяц: <select id="Month" onchange="start()">
+                        <option value="1">Январь</option>
+                        <option value="2">Февраль</option>
+                        <option value="3">Март</option>
+                        <option value="4">Апрель</option>
+                        <option value="5">Май</option>
+                        <option value="6">Июнь</option>
+                        <option value="7">Июль</option>
+                        <option value="8">Август</option>
+                        <option value="9">Сентябрь</option>
+                        <option value="10">Октябрь</option>
+                        <option value="11">Ноябрь</option>
+                        <option value="12">Декабрь</option>
+                    </select></div>
+                <div class="text">Год: <input type="text" value="2022" id="Year" size="4" onchange="start()"></div>
+            </div>
+            <div class="wrapper" id="outputWrapper">
+                <div class="title" id="name">Календарь</div>
+                <div class="output"></div>
+            </div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

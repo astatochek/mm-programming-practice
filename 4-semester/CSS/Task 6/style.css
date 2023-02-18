@@ -1,0 +1,33 @@
+body
+{
+    display: flex;
+}
+.block
+{
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+}
+.block.first
+{
+    background-color: rgb(246, 0, 254);
+    visibility: visible;
+}
+.block.second
+{
+    background-color: rgb(86, 47, 194);
+    visibility: hidden;
+   
+}
+.block.third
+{
+    background-color: rgb(67, 209, 100);
+    visibility: hidden;
+}
+.block.fourth
+{
+    background-color: rgb(255, 0, 51);
+    visibility: hidden;
+}

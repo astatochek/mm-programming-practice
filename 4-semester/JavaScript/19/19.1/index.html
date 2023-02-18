@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>19.1</title>
+    </head>
+    <body>
+        <div class="window">
+            <div class="title">Формирование Расписания Занятий</div>
+            <div class="table">
+                <div class="leftBlock">
+                    <div class="table">
+                        <div class="col">
+                            <div class="title">Начало Курсов</div>
+                            <div class="text">Число: <input type="text" value="1" id="startDate" size="3"></div>
+                            <div class="text">
+                                Месяц: <select id="startMonth">
+                                    <option>Январь</option>
+                                    <option>Февраль</option>
+                                    <option>Март</option>
+                                    <option>Апрель</option>
+                                    <option>Май</option>
+                                    <option>Июнь</option>
+                                    <option>Июль</option>
+                                    <option>Август</option>
+                                    <option>Сентябрь</option>
+                                    <option>Октябрь</option>
+                                    <option>Ноябрь</option>
+                                    <option>Декабрь</option>
+                                </select>
+                            </div>
+                            <div class="text">Год: <input type="text" value="2022" id="startYear" size="4"></div>
+                        </div>
+                        <div class="col">
+                            <div class="title">Конец Курсов</div>
+                            <div class="text">Число: <input type="text" value="21" id="endDate" size="3"></div>
+                            <div class="text">
+                                Месяц: <select id="endMonth">
+                                    <option>Январь</option>
+                                    <option>Февраль</option>
+                                    <option>Март</option>
+                                    <option>Апрель</option>
+                                    <option>Май</option>
+                                    <option>Июнь</option>
+                                    <option>Июль</option>
+                                    <option>Август</option>
+                                    <option>Сентябрь</option>
+                                    <option>Октябрь</option>
+                                    <option>Ноябрь</option>
+                                    <option>Декабрь</option>
+                                </select>
+                            </div>
+                            <div class="text">Год: <input type="text" value="2022" id="endYear" size="4"></div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <p>Выберите день занятий: <select id="dayOfWeek">
+                            <option>Понедельник</option>
+                            <option>Вторник</option>
+                            <option>Среда</option>
+                            <option>Четверг</option>
+                            <option>Пятница</option>
+                            <option>Суббота</option>
+                            <option>Воскресение</option>
+                        </select></p>
+                        <p>Выберите предмет: <select id="subject">
+                            <option>Информатика</option>
+                            <option>Математический анализ</option>
+                            <option>Теория управления</option>
+                            <option>Топология</option>
+                            <option>Алгебра и теория чисел</option>
+                        </select></p>
+                    </div>
+                    <div class="text"><input type="button" value="Сформировать" onclick="getList()"></div>
+                </div>
+                <div class="col" id="output">
+                    <div class="title" id="name">Расписание</div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

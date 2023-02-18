@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.16</title>
+</head>
+<body>
+    <img src="graph.png" width="500" style="position: absolute; top: 0px; left: 0px; z-index: -2;">
+    <img src="point.png" id="p" style="position: absolute; top: 181px; left: 244px; z-index: -1;" width="100px">
+    <form name="f">
+        <input type="button" value="←" onclick="moveLeft()" style="position: absolute; top: 240px; left: 540px;">
+        <input type="button" value="→" onclick="moveRight()" style="position: absolute; top: 240px; left: 590px;">
+        <input type="button" value="↑" onclick="moveUp()" style="position: absolute; top: 215px; left: 568px;">
+        <input type="button" value="↓" onclick="moveDown()" style="position: absolute; top: 264px; left: 568px;">
+    </form>
+    <script src="script.js">
+    </script>
+</body>
+</html>

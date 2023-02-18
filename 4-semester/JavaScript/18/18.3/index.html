@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>18.3</title>
+    </head>
+    <body onload="show()">
+        <div class="col">
+            <p>Введите математическое выражение (с пробелами)</p>
+            <input type="text" onblur="show()" id="formula" value="( 11 + 3 ) / 2 + 19">
+            <p>Обратная польская запись</p>
+            <div class="out" id="output 1"></div>
+            <p>Результат</p>
+            <div class="out" id="output 2"></div>
+            <p>Правильный результат</p>
+            <div class="out" id="output 3"></div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>
+

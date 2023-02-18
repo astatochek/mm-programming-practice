@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task 5</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="block first">Первый блок находится в начале отсчета относительных координат</div>
+        <div class="block second">Второй блок смещен вправо на 50px и вверх на -10px</div>
+        <div class="block third" id="block">Можно двигать с помощью кнопок ниже с шагом 40px</div>
+    </div>
+    <div class="buttons">
+        <button class="button" onclick="toTop()">↑</button>
+        <button class="button" onclick="toBottom()">↓</button>
+        <button class="button" onclick="toLeft()">←</button>
+        <button class="button" onclick="toRight()">→</button>
+        <button class="button" onclick="showText()">Прояви текст</button>
+        <button class="button" onclick="hiddenText()">Скрой текст</button>
+    </div>
+    <div id="text">ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ</div>
+    <script src="script.js"></script>
+</body>
+</html>
