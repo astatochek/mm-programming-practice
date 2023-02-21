@@ -79,9 +79,6 @@ foreach (var val in bankMachineValues)
 }
 Console.WriteLine();
 
-
-var allCombinations = new List<List<int>>();
-
 void PrintCombination(List<int> combination)
 {
     for (var i = 0; i < combination.Count; i++)
@@ -92,7 +89,6 @@ void PrintCombination(List<int> combination)
         }
     }
     Console.WriteLine();
-    combination.Clear();
 }
 
 void GetAllCombinations(int sum, int idx, List<int> combination)
