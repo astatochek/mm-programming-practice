@@ -1,0 +1,11 @@
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\bin\Debug\WindowsFormsCalculator.exe.config
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\bin\Debug\WindowsFormsCalculator.exe
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\bin\Debug\WindowsFormsCalculator.pdb
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\obj\Debug\WindowsFormsCalculator.csproj.AssemblyReference.cache
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\obj\Debug\WindowsFormsCalculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\obj\Debug\WindowsFormsCalculator.Properties.Resources.resources
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\obj\Debug\WindowsFormsCalculator.csproj.GenerateResource.cache
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\obj\Debug\WindowsFormsCalculator.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\obj\Debug\WindowsFormsCalculator.exe
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\obj\Debug\WindowsFormsCalculator.pdb
+C:\Users\ASUS\RiderProjects\WindowsFormsCalculator\obj\Debug\WindowsFormsCalculator.Form1.resources
