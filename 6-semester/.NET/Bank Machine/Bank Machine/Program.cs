@@ -32,10 +32,11 @@ while (!isValidInput)
     {
         try
         {
+
             var input = Array.ConvertAll(Console.ReadLine()!.Split(" ").ToArray(), int.Parse);
-            foreach (var val in input)
+            for (var i = 0; i < input.Length; i++)
             {
-                if (val < 0)
+                if (input[i] < 0)
                 {
                     Console.WriteLine("Some values are invalid");
                     bankMachineValues.Clear();
@@ -43,13 +44,18 @@ while (!isValidInput)
                     break;
                 }
 
-                if (val == 0)
+                if (input[i] == 0 && i == input.Length - 1)
                 {
                     endFlag = true;
                     isValidInput = true;
                     break;
                 }
-                bankMachineValues.Add(val);
+
+                if (input[i] != 0)
+                {
+                    bankMachineValues.Add(input[i]);
+                }
+                
             }
         }
         catch (Exception)
@@ -63,7 +69,7 @@ while (!isValidInput)
     if (isValidInput && bankMachineValues.Count == 0)
     {
         isValidInput = false;
-        Console.WriteLine("No values int put");
+        Console.WriteLine("No values in input");
     }
 }
 
