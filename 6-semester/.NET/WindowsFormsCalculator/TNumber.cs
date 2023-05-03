@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace WindowsFormsCalculator
 {
@@ -94,18 +95,18 @@ namespace WindowsFormsCalculator
         private static TNumber ToTNumber(double val)
         {
             var isNegative = val < 0;
-            var target = (int)(Math.Abs(val) * Math.Pow(BASE, MANTISSA_LEN));
+            var target = Convert.ToInt64(Math.Abs(val) * Math.Pow(BASE, MANTISSA_LEN));
             var allDigits = new List<int>();
             var div = target / BASE;
             var mod = target % BASE;
-            allDigits.Add(mod);
+            allDigits.Add(Convert.ToInt32(mod));
             while (div >= BASE)
             {
                 mod = div % BASE;
                 div /= BASE;
-                allDigits.Add(mod);
+                allDigits.Add(Convert.ToInt32(mod));
             }
-            allDigits.Add(div);
+            allDigits.Add(Convert.ToInt32(div));
 
             while (allDigits.Count < MANTISSA_LEN + 1)
             {
@@ -129,6 +130,11 @@ namespace WindowsFormsCalculator
 
         public override string ToString()
         {
+            // MessageBox.Show($@"Processing {string.Join(",", Digits)} {string.Join(",", Mantissa)}");
+            if (Digits.Length == 0 && Mantissa.Length == 0)
+            {
+                return @"0";
+            }
             var nIndent = IsNegative ? 1 : 0;
 
             var zeros = 0;

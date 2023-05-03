@@ -89,45 +89,52 @@ namespace WindowsFormsCalculator
                 else
                 {
                     var sum = new TNumber("0");
-                    try
+                    switch (str)
                     {
-                        
-                        switch (str)
+                        case "+":
                         {
-
-                            case "+":
-                            {
-                                    var a = new TNumber(stack.Pop());
-                                    var b = new TNumber(stack.Pop());
-                                    sum = a + b;
-                                    break;
-                                }
-                            case "-":
-                                {
-                                    var a = new TNumber(stack.Pop());
-                                    var b = new TNumber(stack.Pop());
-                                    sum = b - a;
-                                    break;
-                                }
-                            case "*":
-                                {
-                                    var a = new TNumber(stack.Pop());
-                                    var b = new TNumber(stack.Pop());
-                                    sum = b * a;
-                                    break;
-                                }
-                            case "/":
-                                {
-                                    var a = new TNumber(stack.Pop());
-                                    var b = new TNumber(stack.Pop());
-                                    sum = b / a;
-                                    break;
-                                }
+                            var a = new TNumber(stack.Pop());
+                            Check(a);
+                            var b = new TNumber(stack.Pop());
+                            Check(b);
+                            sum = a + b; 
+                            Check(sum);
+                            break;
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
+                        case "-":
+                        {
+                            var a = new TNumber(stack.Pop());
+                            Check(a);
+                            var b = new TNumber(stack.Pop());
+                            Check(b);
+                            sum = b - a;
+                            Check(sum);
+                            break;
+                        }
+                        case "*":
+                        {
+                            var a = new TNumber(stack.Pop());
+                            Check(a);
+                            var b = new TNumber(stack.Pop());
+                            Check(b);
+                            sum = b * a;
+                            Check(sum);
+                            break;
+                        }
+                        case "/":
+                        {
+                            var a = new TNumber(stack.Pop());
+                            Check(a);
+                            var b = new TNumber(stack.Pop());
+                            Check(b);
+                            if (a.ToString() == @"0")
+                            {
+                                throw new DivideByZeroException();
+                            }
+                            sum = b / a;
+                            Check(sum);
+                            break;
+                        }
                     }
                     stack.Push(sum.ToString());
                     if (queue.Count > 0)
@@ -137,7 +144,21 @@ namespace WindowsFormsCalculator
                 }
                 
             }
+
+            // MessageBox.Show($@"Result is {new TNumber(stack.Pop())}");
             return new TNumber(stack.Pop());
+        }
+        
+        private static void Check(TNumber val)
+        {
+            try
+            {
+                var tmp = val.ToString();
+            }
+            catch (Exception)
+            {
+                throw new ArgumentException();
+            }
         }
     }
 }

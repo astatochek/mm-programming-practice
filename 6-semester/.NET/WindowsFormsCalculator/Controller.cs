@@ -23,7 +23,7 @@ namespace WindowsFormsCalculator
         
         private PostfixNotationExpression PostfixNotationExpression { get; set; }
         
-        private readonly string[] _nums = { @".", @"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"A", @"B", @"C", @"D" };
+        private readonly string[] _nums = { @".", @"0", @"1", @"2", @"3", @"4", @"5", @"6" };
         private readonly string[] _operators = { @"+", @"-", @"*", @"/", @"(", @")" };
         private readonly string[] _commands = { @"Clear", @"Delete", @"Backspace", @"=" };
 
@@ -63,64 +63,98 @@ namespace WindowsFormsCalculator
 
         private void ProcessArg(string arg)
         {
+            var next = Arg.Text;
+
+            if (next.Length > 0 && next[0] == '.')
+            {
+                next = string.Join("", next.ToArray().Skip(1).ToArray()) + @".";
+            }
+            
             if (arg == @".")
             {
                 if (Dots() < 1)
                 {
-                    Arg.Text += arg;
+                    next += arg;
                 }
             }
-            else if (Arg.Text == @"0")
+            else if (next == @"0")
             {
-                Arg.Text = arg;
+                next = arg;
             }
-            else
+            else if (_nums.Contains(arg))
             {
-                Arg.Text += arg;
+                next += arg;
             }
+
+            switch (next.Length > 0)
+            {
+                case true when next[next.Length - 1] == '.':
+                    next = @"." + string.Join("", next.ToArray().Take(next.Length - 1).ToArray());
+                    break;
+                case true when next[0] == '-':
+                    next = string.Join("", next.ToArray().Skip(1).ToArray()) + @"-";
+                    break;
+            }
+
+            if (next == @"")
+            {
+                next = @"0";
+            }
+
+            Arg.Text = next;
         }
 
         private void ProcessOperand(string operand)
         {
             var val = new TNumber(Arg.Text);
-            if (operand == @"(") // If "(" was passed
+            switch (operand)
             {
-                UnclosedBrackets++;
-                if (Sequence.Count > 0 && Sequence.Last().GetType() == typeof(TNumber)) // If last element of `Sequence` was a `TNumber`, we add "* (" to `inputAll` and clear `input`
+                // If "(" was passed
+                case @"(":
                 {
-                    Add(@"*");
-                    Add(@"(");
-                    ClearArg();
+                    UnclosedBrackets++;
+                    if (Sequence.Count > 0 && Sequence.Last().GetType() == typeof(TNumber)) // If last element of `Sequence` was a `TNumber`, we add "* (" to `inputAll` and clear `input`
+                    {
+                        Add(@"*");
+                        Add(@"(");
+                        ClearArg();
+                    }
+                    else // If last element in `Sequence` wa an operand, we write "val (" in `inputAll` and clear `input`
+                    {
+                        if (Arg.Text != @"0")
+                        {
+                            Add(val);
+                            Add(@"*");
+                        }
+                        Add(@"(");
+                        ClearArg();
+                    }
+
+                    break;
                 }
-                else // If last element in `Sequence` wa an operand, we write "val (" in `inputAll` and clear `input`
+                case @")" when UnclosedBrackets <= 0:
+                    return;
+                case @")":
+                    Add(val);
+                    Add(@")");
+                    ClearArg();
+                    UnclosedBrackets--;
+                    break;
+                default:
                 {
-                    if (Arg.Text != @"0")
+                    if (Sequence.Count > 0 && Sequence.Last().ToString() == @")")
+                    {
+                        Add(operand);
+                        ClearArg();
+                    }
+                    else // If operand passed is not ")" or "(", we write "val operand" in `inputAll` and clear `input`
                     {
                         Add(val);
-                        Add(@"*");
+                        Add(operand);
+                        ClearArg();
                     }
-                    Add(@"(");
-                    ClearArg();
+                    break;
                 }
-            }
-            else if (operand == @")")
-            {
-                if (UnclosedBrackets <= 0) return;
-                Add(val);
-                Add(@")");
-                ClearArg();
-                UnclosedBrackets--;
-            }
-            else if (Sequence.Count > 0 && Sequence.Last().ToString() == @")")
-            {
-                Add(operand);
-                ClearArg();
-            }
-            else // If operand passed is not ")" or "(", we write "val operand" in `inputAll` and clear `input`
-            {
-                Add(val);
-                Add(operand);
-                ClearArg();
             }
         }
 
@@ -139,6 +173,11 @@ namespace WindowsFormsCalculator
                     if (Arg.Text.Length > 1)
                     {
                         Arg.Text = Arg.Text.Substring(0, Arg.Text.Length - 1);
+                        ProcessArg("");
+                        if (Arg.Text == @"0." || Arg.Text == @".")
+                        {
+                            ClearArg();
+                        }
                     }
                     else
                     {
@@ -154,9 +193,9 @@ namespace WindowsFormsCalculator
                     var val = new TNumber(Arg.Text);
                     if (Sequence.Count == 0)
                     {
-                        Add(@"0");
+                        Add(val);
                         Add(@"=");
-                        Arg.Text = @"0";
+                        Arg.Text = val.ToString();
                         IsShowingAnswer = true;
                         return;
                     }
@@ -170,14 +209,26 @@ namespace WindowsFormsCalculator
                         Add(@"=");
                     }
                     IsShowingAnswer = true;
-                    Arg.Text = PostfixNotationExpression
-                        .Calculate(
-                            new List<object>(
-                                Sequence
-                                    .Take(Sequence.Count - 1)
+                    try
+                    {
+                        Arg.Text = PostfixNotationExpression
+                            .Calculate(
+                                new List<object>(
+                                    Sequence
+                                        .Take(Sequence.Count - 1)
                                 )
                             )
-                        .ToString();
+                            .ToString();
+                    }
+                    catch (DivideByZeroException)
+                    {
+                        ShowMessage(@"Cannot divide by zero");
+                    }
+                    catch (ArgumentException)
+                    {
+                        ShowMessage(@"Arithmetic overflow Error");
+                    }
+                    ProcessArg("");
                     break;
             }
         }
@@ -196,10 +247,17 @@ namespace WindowsFormsCalculator
         
         private void ClearArg()
         {
+            Arg.Font = new System.Drawing.Font("JetBrains Mono SemiBold", 26F, System.Drawing.FontStyle.Bold);
             Arg.Text = @"0";
         }
 
         private int Dots() => Arg.Text.Count(t => t == '.');
+
+        private void ShowMessage(string msg)
+        {
+            Arg.Font = new System.Drawing.Font("JetBrains Mono SemiBold", 20F, System.Drawing.FontStyle.Bold);
+            Arg.Text = msg;
+        }
 
         private void Update()
         {
@@ -207,7 +265,18 @@ namespace WindowsFormsCalculator
             for (var i = 0; i < Sequence.Count; i++)
             {
                 var operand = Sequence[i];
-                formatted.Add(operand.ToString() == @"*" ? @"×" : operand.ToString());
+                switch (operand.ToString())
+                {
+                    case @"(":
+                        formatted.Add(@")");
+                        break;
+                    case @")":
+                        formatted.Add(@"(");
+                        break;
+                    default:
+                        formatted.Add(operand.ToString() == @"*" ? @"×" : operand.ToString());
+                        break;
+                }
                 if (operand.ToString() != "(" && !(i < Sequence.Count - 1 && Sequence[i + 1].ToString() == ")"))
                 {
                     formatted.Add(@" ");
