@@ -1,0 +1,72 @@
+```{r}
+library(readr)
+library(ggplot2)
+
+count_words <- function(text) {
+  length(strsplit(text, " ")[[1]])
+}
+
+data <- read_csv("anime.csv")
+
+word_count <- unname(sapply(data$`Anime`, count_words))
+
+all_genres <- unique(unlist(strsplit(data$`Genre`, ", ")))
+
+create_genre_columns <- function(data, genre_vector) {
+  genres_in_rows <- strsplit(as.character(data$`Genre`), ", ")
+  genres_matrix <- t(sapply(genres_in_rows, function(row_genres) {
+    as.numeric(genre_vector %in% row_genres)
+  }))
+  colnames(genres_matrix) <- genre_vector
+  cbind(data, genres_matrix)
+}
+
+
+genre_columns <- create_genre_columns(data, all_genres)
+
+final_table <- cbind(word_count, genre_columns)
+
+final_table <- as.data.frame(final_table[, c(1, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 6)])
+
+print(final_table)
+```
+
+```{r}
+word_count_density <- density(final_table$`word_count`)
+action_density <- density(final_table$`Action`)
+rating_density <- density(final_table$`Rating`)
+plot(word_count_density)
+plot(action_density)
+plot(rating_density)
+```
+```{r set-options, echo = FALSE, cache = FALSE}
+options(width = 10)
+print(cor(final_table[, c('word_count', 'Rating')]))
+```
+```{r}
+boxplot(final_table$`word_count`)
+boxplot(final_table$`Rating`)
+```
+```{r}
+pairs(final_table[, c('word_count', 'Rating')], pch  = 18)
+```
+```{r}
+model1 <- lm(Rating ~ `word_count` + 0, data = final_table)
+summary(model1)
+```
+```{r}
+model2 <- lm(Rating ~ `word_count`, data = final_table)
+summary(model2)
+```
+```{r}
+plot(final_table$`word_count`, final_table$`Rating`)
+abline(model1, col=2)
+abline(model2, col=3)
+legend(x = "topright", legend = c("without const", "with const"),
+       col = c(2,3), lty = c(1,1))
+```
+```{r}
+model3 <- lm(Rating ~ `word_count` + `Action` + `Drama`,
+             data = final_table)
+summary(model3)
+```
